@@ -391,7 +391,6 @@ private)
 
 - (NSString *)_platformString {
   NSString *platform = [self _platform];
-  NSLog(@"%@",platform);
   if ([platform isEqualToString:@"iPhone1,1"]) return @"iPhone 1G";
   if ([platform isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
   if ([platform isEqualToString:@"iPhone2,1"]) return @"iPhone 3GS";
