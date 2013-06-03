@@ -85,10 +85,10 @@ private)
 - (void)loadView {
     [super loadView];
 
-    self.title = NSLocalizedStringFromTable(@"AAMFeedbackTitle", @"AAMLocalizable", nil);
+    self.title = NSLocalizedStringFromTable(@"Feedback", @"AAMLocalizable", nil);
     self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelDidPress:)] autorelease];
 
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"AAMFeedbackButtonMail", @"AAMLocalizable", nil) style:UIBarButtonItemStyleDone target:self action:@selector(nextDidPress:)] autorelease];
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedStringFromTable(@"Mail", @"AAMLocalizable", nil) style:UIBarButtonItemStyleDone target:self action:@selector(nextDidPress:)] autorelease];
 }
 
 - (void)viewDidLoad {
@@ -158,10 +158,10 @@ private)
 - (NSString *)tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger) section {
     switch (section) {
         case 0:
-            return NSLocalizedStringFromTable(@"AAMFeedbackTableHeaderTopics", @"AAMLocalizable", nil);
+            return NSLocalizedStringFromTable(@"Feedback Topics", @"AAMLocalizable", nil);
             break;
         case 1:
-            return NSLocalizedStringFromTable(@"AAMFeedbackTableHeaderBasicInfo", @"AAMLocalizable", nil);
+            return NSLocalizedStringFromTable(@"Basic Info", @"AAMLocalizable", nil);
             break;
         default:
             break;
@@ -197,7 +197,7 @@ private)
 
                 _descriptionPlaceHolder = [[[UITextField alloc] initWithFrame:CGRectMake(16, 8, 300, 20)] autorelease];
                 _descriptionPlaceHolder.font = [UIFont systemFontOfSize:16];
-                _descriptionPlaceHolder.placeholder = NSLocalizedStringFromTable(@"AAMFeedbackDescriptionPlaceholder", @"AAMLocalizable", nil);
+                _descriptionPlaceHolder.placeholder = NSLocalizedStringFromTable(@"Write your feedback", @"AAMLocalizable", nil);
                 _descriptionPlaceHolder.userInteractionEnabled = NO;
                 [cell.contentView addSubview:_descriptionPlaceHolder];
 
@@ -212,7 +212,7 @@ private)
             switch (indexPath.row) {
                 case 0:
 
-                    cell.textLabel.text = NSLocalizedStringFromTable(@"AAMFeedbackTopicsTitle", @"AAMLocalizable", nil);
+                    cell.textLabel.text = NSLocalizedStringFromTable(@"Topics Title", @"AAMLocalizable", nil);
                     cell.detailTextLabel.text = NSLocalizedStringFromTable([self _selectedTopic], @"AAMLocalizable", nil);
                     break;
                 case 1:
@@ -312,7 +312,7 @@ private)
     } else if (result == MFMailComposeResultSent) {
         _isFeedbackSent = YES;
     } else if (result == MFMailComposeResultFailed) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"AAMFeedbackMailDidFinishWithError"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:@"Error"
                                                                     delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
         [alert release];

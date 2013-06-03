@@ -29,7 +29,7 @@ private)
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = NSLocalizedStringFromTable(@"AAMFeedbackTopicsTitle", @"AAMLocalizable", nil);
+    self.title = NSLocalizedStringFromTable(@"Topics Title", @"AAMLocalizable", nil);
 }
 
 - (void)viewDidUnload {
